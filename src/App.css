@@ -1,38 +1,352 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+/* MENU BURGER */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
+  .burger-icon {
+    display: block;
+  }
+  
+
+.burger-icon {
+  display: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.burger-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+
+/* Menu latéral à droite */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #216249;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 1001;
+  padding-top: 30px;
+}
+
+
+.side-menu a,
+.side-menu button {
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.side-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Overlay sombre */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+
+}
+
+
+/* MENU NAVIGATION */
+.menu {
+  display: flex;
+  gap: 20px;
+ 
+}
+
+
+.menu a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.menu a.accueil { color: yellow; }
+.menu a.accueil:hover { color: white; }
+.menu a.connexion { color: white; }
+.menu a.connexion:hover { color: yellow; }
+.menu a.inscription {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.menu a.inscription:hover {
+  color: yellow;
+  background-color: rgba(32, 30, 30, 0.74);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+/*Profil*/
+
+/* Style général de la navbar */
+
+.navbar {
+  background: #2e7d32f5; /* Vert */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
 }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.nav-item:hover {
+  text-decoration: none;
+ 
+}
+
+.nav-item.b:hover {
+  color: yellow;
+}
+
+/* 🌟 Spécifique aux pages de profil */
+.navbar-profil {
+  background-color: #fafcfbf0; /* Fond transparent */
+}
+
+.navbar-profil .nav-item {
+  color: white; /* Tous les liens blancs */
+}
+
+.navbar-profil .nav-item.active {
+  color: yellow; /* Le lien "Profil" est jaune */
+}
+
+.navbar-profil .nav-item.active:hover {
+
+color: white;
+}
+
+.navbar-profil .deco {
+  background-color: #fafcfb27;
+  color: white;
+  margin-top: -2%;
+
+}
+
+.navbar-profil .deco:hover {
+  background: rgba(66, 66, 47, 0.82);
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* NAVBAR */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.nav-item {
+  color: yellow;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.nav-item:hover {
+  color: white;
+}
+
+
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+
+
+.logo {
+  font-family: 'chicle', cursive;
+  font-size: 24px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item  {
+  color: yellow;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 5% rgba(0, 0, blue, alpha);
+}
+
+
+
+.nav-item:hover {
+  color: white;
+}
+
+
+
+
+ .c  {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.c:hover {
+  color: yellow;
+}
+
+
+
+.inscription-btn {
+  background-color: rgba(0, 0, 0, 0.356);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20%;
+  margin-top: -3%;
+
+}
+.inscription-btn:hover {
+  background-color: rgba(0, 0, 0, 0.658);
+  color: yellow;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #207245;
+  color: white;
+  text-align: center;
+  padding: 4% 0;
+  margin-top: -1%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.footer p {
+  font-size: 130%;
+}
+
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    flex-direction: column;
+    background: #fafcfb;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links {
+
+    display:none;
+  }
+
+  .menu-open {
+    display: flex;
+    background-color: #207245;
+    margin-left: 10%;
+  }
+
+
+  .menu-burger {
+    display: block;
+  }
+
+
+  .menu a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+
+
+
+
+}
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
