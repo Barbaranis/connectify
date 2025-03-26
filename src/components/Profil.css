@@ -586,3 +586,138 @@ width: 70%;
     margin-top: 20px;
 }
 
+
+
+/* :::::::::: RESPONSIVE - MOBILES & TABLETTES :::::::::: */
+@media screen and (max-width: 768px) {
+
+
+  /* Réorganisation globale */
+  .profil-content {
+    flex-direction: column;
+    margin: 0;
+  }
+
+
+  /* Menu latéral en haut */
+  .profil-menu {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+
+
+  .profil-btn, .profil-btm {
+    width: auto;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+
+  /* Bannière & Avatar */
+  .profil-banner {
+    flex-direction: column;
+    padding: 50px 10px;
+    gap: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+
+  .avatar {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+
+  .nom, .prenom {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+
+  /* Wall */
+  .wall-wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .wall-image {
+    width: 100%;
+    margin-left: 0;
+  }
+
+
+  .wall-header h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+
+  .wall-image-section .wall-time {
+    margin-left: 0;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+
+  /* Galerie */
+  .gallery {
+    
+    padding: 25px;
+    width: 100%;
+    margin-left: 3%;
+  }
+
+
+  /* Vidéo & Musique */
+
+
+
+  .profil-main {
+    flex-grow: 1;
+    padding: 31px;
+    margin-left: 6%;
+    margin-bottom: 20%;
+}
+
+
+
+  .profil-video,
+  .music-container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .audio { 
+    padding:30p
+  }
+
+  .music-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .music-cover, .music-covern {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+
+  /* Footer */
+  .footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
