@@ -379,7 +379,7 @@ width: 70%;
   
   
   /* Bouton téléchargement */
-  .btn-download {
+  .input.file {
     background-color: #FFD700;
     background-image: url('../assets/images/Vector.png');
   }
