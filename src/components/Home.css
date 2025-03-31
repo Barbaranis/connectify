@@ -39,24 +39,6 @@ header .logo {
 
 }
 
-/* MENU BURGER */
-.menu-burger {
-  display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-
-.menu-burger .bar {
-  width: 30px;
-  height: 5px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.4s;
-}
 
 
 /* MENU NAV */
@@ -465,6 +447,9 @@ footer {
 }
 /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
   header h1 {
     font-size: 3em;
   }
@@ -615,6 +600,6 @@ footer {
   margin-right: 60%;
   margin-left: 0;
 }
-footer {}
+
 
 }

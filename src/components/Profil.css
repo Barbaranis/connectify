@@ -87,9 +87,7 @@ flex-direction: row;
 width: 70%;
 }
 
-.momo {
-   
-}
+
 
 .avatar {
     width: 120px;
@@ -610,12 +608,21 @@ width: 70%;
   }
 
 
+
   .profil-btn, .profil-btm {
     width: auto;
     margin: 5px;
     font-size: 14px;
   }
 
+
+  /*Logo*/
+  .logo { 
+   font-size: 10px;
+
+  }
+
+  
 
   /* Bannière & Avatar */
   .profil-banner {
@@ -628,8 +635,12 @@ width: 70%;
 
 
   .avatar {
-    margin-left: 0;
+    margin-left: 28%;
     margin-bottom: 10px;
+      width: 61px;
+      height: 61px;
+      margin-right: 16%;
+
   }
 
 
@@ -646,6 +657,12 @@ width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
+
+
+  .wall-header h3 {
+    font-size: 95%;
+  }
+
 
 
   .wall-image {
@@ -667,14 +684,35 @@ width: 70%;
   }
 
 
+  .comment-input {
+width: 10%;
+font-size: 60%;
+  }
+
+
+
+
+  .btn-download, .btn-send {
+
+    width: 35px;
+    height: 35px;
+  }
+
+
   /* Galerie */
   .gallery {
     
-    padding: 25px;
-    width: 100%;
-    margin-left: 3%;
+    padding: 20px;
+    width: 107%;
+    margin-left: -5%;
+   
   }
 
+
+  .gallery-img-clickable {
+
+    height:157px ;
+  }
 
   /* Vidéo & Musique */
 
@@ -696,9 +734,16 @@ width: 70%;
     margin-right: auto;
   }
 
-  .audio { 
-    padding:30p
-  }
+ 
+
+
+  audio {
+    width: 220px;
+    height: 30px;
+  margin-left: 8%;
+  margin-top: 10%;
+}
+
 
   .music-item {
     flex-direction: column;

@@ -167,6 +167,8 @@
 
   .gender {
     flex-wrap: wrap;
+    gap: 10%;
+    margin-left: 2%;
   }
 
 
