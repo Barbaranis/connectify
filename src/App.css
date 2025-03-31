@@ -1,0 +1,402 @@
+
+
+
+
+
+/*Menu burger */
+
+
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+}
+
+
+.menu-toggle:hover {
+ color: #207245;
+}
+
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background-color: hsl(135, 15%, 95%);
+  transition: background-color 0.3s ease;
+}
+
+
+.menu-toggle.active span {
+  background-color: #f0f0f0;
+}
+
+
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 390px;
+  height: 100%;
+  background-color: #20835D;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 83px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+ 
+}
+
+
+.nav-menu.show {
+  right: 0;
+}
+
+
+
+.nav-menu a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  text-align: center;
+ 
+
+
+}
+
+
+.nav-menu a:hover {
+  color: #daca3b;
+}
+
+
+.nav-menu .close-btn {
+  font-size: 64px;
+  color: #daca3b;
+  cursor: pointer;
+  align-self: flex-start;
+  align-items: center;
+}
+
+
+.nav-menu .close-btn:hover {
+  color: #888;
+}
+
+
+
+
+
+
+/*********************************************************************************************************/
+
+
+/* MENU NAVIGATION */
+.menu {
+  display: flex;
+  gap: 20px;
+ 
+}
+
+
+.menu a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+
+.menu a.accueil { color: yellow; }
+.menu a.accueil:hover { color: white; }
+.menu a.connexion { color: white; }
+.menu a.connexion:hover { color: yellow; }
+.menu a.inscription {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.menu a.inscription:hover {
+  color: yellow;
+  background-color: rgba(32, 30, 30, 0.74);
+}
+
+
+
+
+/*Profil*/
+
+/* Style général de la navbar */
+
+.navbar {
+  background: #2e7d32f5; /* Vert */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.nav-item:hover {
+  text-decoration: none;
+ 
+}
+
+.nav-item.b:hover {
+  color: yellow;
+}
+
+/***************************************************************************************************************/
+/* 🌟 Spécifique aux pages de profil */
+.navbar-profil {
+  background-color: #fafcfbf0; /* Fond transparent */
+}
+
+.navbar-profil .nav-item {
+  color: white; /* Tous les liens blancs */
+}
+
+.navbar-profil .nav-item.active {
+  color: yellow; /* Le lien "Profil" est jaune */
+}
+
+.navbar-profil .nav-item.active:hover {
+
+color: white;
+}
+
+.navbar-profil .deco {
+  background-color: #fafcfb27;
+  color: white;
+  margin-top: -2%;
+
+}
+
+.navbar-profil .deco:hover {
+  background: rgba(66, 66, 47, 0.82);
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* NAVBAR */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.nav-item {
+  color: yellow;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.nav-item:hover {
+  color: white;
+}
+
+
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+
+
+.logo {
+  font-family: 'chicle', cursive;
+  font-size: 24px;
+  color: yellow;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item  {
+  color: yellow;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 5% rgba(0, 0, blue, alpha);
+}
+
+
+
+.nav-item:hover {
+  color: white;
+}
+
+
+
+
+ .c  {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.c:hover {
+  color: yellow;
+}
+
+
+
+.inscription-btn {
+  background-color: rgba(0, 0, 0, 0.356);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20%;
+  margin-top: -3%;
+
+}
+.inscription-btn:hover {
+  background-color: rgba(0, 0, 0, 0.658);
+  color: yellow;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #207245;
+  color: white;
+  text-align: center;
+  padding: 4% 0;
+  margin-top: -1%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.footer p {
+  font-size: 130%;
+}
+
+
+
+/* Cacher par défaut sur grand écran */
+.responsive-only {
+  display: none;
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+
+
+
+  .responsive-only {
+    display: block;
+  }
+
+
+  .navbar .nav-links {
+    display: none; /* Cache les liens classiques en responsive */
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    flex-direction: column;
+    background: #fafcfb;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links {
+
+    display:none;
+  }
+
+  .menu-open {
+    display: flex;
+    background-color: #207245;
+    margin-left: 10%;
+  }
+
+
+  .menu-burger {
+    display: block;
+  }
+
+
+  .menu a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+
+
+  .close-btn {
+    position: absolute;
+   
+    right: 19px;
+    font-size: 69px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+    
+
+}
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
