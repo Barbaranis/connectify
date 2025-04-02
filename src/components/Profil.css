@@ -1,422 +1,244 @@
 /* Importation des polices */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Chicle&family=Gravitas+One&display=swap');
 
+
 /* --- Styles généraux --- */
 body {
-    background: #ffffff;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- Header --- */
-.profil-header {
-    background: #2e7d32;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-}
-
-.logo {
-    font-family: 'Chicle', cursive;
-    font-size: 26px;
-    text-decoration: none;
-    color: #FFD700;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-item {
-    color: rgba(255, 255, 255, 0.696);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.nav-item:hover {
-    text-decoration: underline;
-}
-
-.nav-item .deco {
-  color:white
-}
-
-
-
-
-
-.deco {
-    background: #f44336;
-    padding: 5px 12px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: white;
-    border-radius: 5px;
-}
-
-.deco:hover {
-    background: #d32f2f;
-}
 
 /* --- Bannière Profil --- */
 .profil-banner {
-    background: url('../assets/images/banner_profil.png') no-repeat center/cover;
-    padding: 15%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+  background: url('../assets/images/banner_profil.png') no-repeat center/cover;
+  padding: 15%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 
 .pas {
-
-    background-color: #cccccc48;
-position:absolute;
-z-index: 1;
-width: 100%;
-display: flex;
-flex-direction: row;
-width: 70%;
+  background-color: #cccccc48;
+  position: absolute;
+  z-index: 1;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
 }
-
 
 
 .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid white; 
-    margin-left: 30%;
-    background-size: cover;
-    background-image:url('../assets/images/hexatar_230720ry32sx.png') ;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-left: 30%;
+  background-size: cover;
+  background-image: url('../assets/images/hexatar_230720ry32sx.png');
 }
+
 
 .nom, .prenom {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    margin-left: 310%;
-    width: 100%;
-    margin-top: 20%;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  margin-left: 310%;
+  width: 100%;
+  margin-top: 20%;
 }
-
-
 
 
 /* --- Menu latéral --- */
-
-
-
-  
-  /* --- Menu latéral --- */
-  .profil-menu {
-    background: #453605;
-    padding: 20px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .profil-btn {
-    display: block;
-    background: none;
-    border: none;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-  }
-  
-
-  .profil-btm {
-    display: block;
-    background-color: #C7B941;
-    width: 120%;
-    margin-left: -10%;
-    border: none;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .profil-btn:hover {
-    background: #c7ba41c1;
-    color: white;
-  }
-  
-  
-  
-  /* --- Mur de publication --- */
-  .wall-post {
-    background: white;
-   
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
- 
-  
-
-
-
-/* eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee*/
 .profil-content {
   display: flex;
   margin: 3%;
- 
 }
-
-
-
 
 
 .profil-menu {
-    background: #DACA3B;
-    padding: 20px;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 160%;
+  background: #DACA3B;
+  padding: 20px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 160%;
 }
-
 
 
 .profil-btn {
-    display: block;
-    background: none;
-    border: none;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(254, 254, 254);
-    width: 120%;
-    margin-left: -10%;
-     border: none;
-     text-align: center;
-     padding: 10px;
-     font-weight: bold;
-     cursor: pointer;
-     text-decoration: none;
-     color: black;
+  display: block;
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  width: 120%;
+  margin-left: -10%;
 }
+
 
 .profil-btn:hover {
-    background: #c7ba41af;
-    color: white;
-   
+  background: #c7ba41af;
+  color: white;
 }
-
-
 
 
 /* --- Contenu principal --- */
-
-
-
 .profil-main {
-    flex-grow: 1;
-    padding: 20px;
+  flex-grow: 1;
+  padding: 20px;
 }
-
-
-
-
-  
-  
-
-
-
-/* --- Mur de publications --- */
 
 
 .section-title {
-    font-family: 'Gravitas One', sans-serif;
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 15px;
-    color: #b8860b;
+  font-family: 'Gravitas One', sans-serif;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #b8860b;
+}
+
+
+/* --- My Walls --- */
+.wall-wrapper {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 80%;
+  margin-left: 14%;
+}
+
+
+.wall-post {
+  background-color: rgba(255, 255, 255, 0.121);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.wall-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.wall-header h3 {
+  font-size: 120%;
+  margin-left: 38%;
+}
+
+
+.wall-time {
+  font-size: 12px;
+  color: #666;
+}
+
+
+.wall-image-section {
+  background-color: white;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.wall-image, .wall-video, .wall-audio {
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+
+
+.wall-comment {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+/* --- Zone d'envoi de message (MyWalls) --- */
+.message-box {
+  background-color: #2e7d32; /* vert */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+
+/* Champ message */
+.comment-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+}
+
+
+/* Icônes */
+.btn-download,
+.btn-send {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+/* Icône d'import (à remplacer par ton image perso dans le dossier public/assets) */
+.btn-download {
+  background-image: url('../assets/images/Vector.png'); 
+  background-color: rgba(240, 240, 67, 0.84);
+}
+
+
+/* Icône d’envoi (à remplacer aussi par ton image) */
+.btn-send {
+  background-image: url('../assets/images/Email\ Send.png'); 
+  background-color: #09350b7e;
 }
 
 
 
 
+/* Hover  */
 
-
-
-/* --- Mur complet --- */
-.wall-wrapper {
-    background-color: #f0f0f0; /* gris clair */
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    width: 80%;
-    margin-left:14% ;
-  }
-  
-   
-  /* --- Premier bloc (texte) --- */
-  .wall-post {
-    background-color: rgba(255, 255, 255, 0.121);
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .wall-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
-  .wall-header h3 {
-    font-size: 120%;
-    margin: 0;
-    margin-left: 38%;
-  }
-  
-  
-  .wall-time {
-    font-size: 12px;
-    color: #666;
-  
-  }
-  
-  .wall-image-section .wall-time {
-    font-size: 12px;
-    color: #666;
-  margin-left: 96%;
-  }
-  
-  /* --- Deuxième bloc (image + texte) --- */
-  .wall-image-section {
-    background-color: rgb(255, 255, 255);
-    margin-top: 15px;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
-    text-align: center;
-  }
-  
-  
-  .wall-image {
-    background-image: url('../assets/images/homer.jpeg');
-    background-size: cover;
-    background-position: center;
-    width: 50%;
-    height: 180px;
-    margin-bottom: 10px;
-    margin-left: 26%;
-  }
-  
-  
-  .wall-comment {
-    font-size: 14px;
-    color: #333;
-    margin: 0;
-  }
-  
-  
-  /* --- Zone d'envoi de message --- */
-  .message-box {
-    background-color: #2e7d32; /* vert */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5%;
-    
-  }
-  
-  
-  .comment-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 15px;
-    font-size: 16px;
-  }
-  
-  
-  /* Icônes */
-  .icons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  
-  .btn-download,
-  .btn-send {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background-color: transparent;
-    background-size: 65%;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-  
-  
-  /* Bouton téléchargement */
-  .input.file {
-    background-color: #FFD700;
-    background-image: url('../assets/images/Vector.png');
-  }
-  
-  
-  .btn-download:hover {
-    background-color: #c7ba41;
-  }
-  
-  
-  /* Bouton envoi */
-  .btn-send {
-    background-color: rgba(5, 54, 10, 0.658);
-    background-image: url('../assets/images/Email Send.png');
-  }
-  
-  
-  .btn-send:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+.btn-download:hover {
+  background-color: rgba(184, 181, 44, 0.717);
+}
+.btn-send:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 
 
 
-/* --- Galerie d'images --- */
-/* Section Gallery */
-
-
+/* --- Galerie --- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,9 +249,6 @@ width: 70%;
   margin: 0 auto 30px auto;
   max-width: 600px;
 }
-
-
-
 
 
 .gallery-img-clickable {
@@ -447,7 +266,6 @@ width: 70%;
 }
 
 
-/* MODALE */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -464,8 +282,6 @@ width: 70%;
 
 .modal-content {
   position: relative;
- 
- 
   border-radius: 10px;
   max-width: 80%;
   max-height: 90%;
@@ -490,99 +306,71 @@ width: 70%;
   cursor: pointer;
   color: rgb(255, 255, 255);
 }
-  
 
 
+.close-btn:hover {
+  color: #010101e8;
+}
 
-  .close-btn:hover {
-    color: #010101e8;
-  }
 
 /* --- Vidéo --- */
 .profil-video {
-    width: 70%;
-    border-radius: 8px;
-    margin-left: 20%;
+  width: 70%;
+  border-radius: 8px;
+  margin-left: 20%;
 }
 
 
 /* --- Musique --- */
 .music-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 70%;
-    margin-left: 20%;
-  }
-  
-  
-
-
-
- 
-
-
-
-
-  .music-item {
-    display: flex;
-    align-items: center;
-    gap: 5%;
-    background: #2e7d32;
-    padding: 8%;
-    border-radius: 10px;
-    color: white;
-    justify-content: space-between;
-  }
-  
-
-
-
-  .music-covern {
-    background-image: url("../assets/images/album-hip-hop.png");
-    background-size: cover;
-    width: 18%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-    padding: 5%;
-  }
-
-
-
-
-
-  
-  .music-cover {
-    background-image: url("../assets/images/album-hop.png");
-    background-size: cover;
-    width: 18%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-    padding: 5%;
-  }
-
-
-
-  
-  
-  .music-title {
-    flex-grow: 1;
-    margin: 0;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-
-/* --- Footer --- */
-.footer {
-    text-align: center;
-    background: #2e7d32;
-    color: white;
-    padding: 15px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  margin-left: 20%;
 }
+
+
+.music-item {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  background: #2e7d32;
+  padding: 8%;
+  border-radius: 10px;
+  color: white;
+  justify-content: space-between;
+}
+
+
+.music-cover, .music-covern {
+  width: 38%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  padding: 5%;
+  background-size: cover;
+}
+
+
+.music-title {
+  flex-grow: 1;
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #2e7d32;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+
 
 
 

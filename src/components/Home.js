@@ -5,6 +5,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import headervideo from '../assets/images/headervideo.mp4';
+
+
+
 import './Home.css';
 
 
@@ -19,6 +22,35 @@ export default function Home() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+
+
+
+  const [welcomeText, setWelcomeText] = useState("Bienvenue");
+
+
+  const welcomeLanguages = [
+    "Bienvenue", "Welcome", "Willkommen", "Bienvenido", "Benvenuto",
+    "Welkom", "ようこそ", "환영합니다", "欢迎", "Добро пожаловать"
+  ];
+  
+  
+  React.useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setWelcomeText(welcomeLanguages[i]);
+      i = (i + 1) % welcomeLanguages.length;
+    }, 3000);
+  
+  
+    return () => clearInterval(interval);
+  }, []);
+  
+  
+  
+  
+  
+
 
 
 
@@ -65,6 +97,8 @@ export default function Home() {
        
       </section>
 
+   
+
 
 
 
@@ -92,7 +126,8 @@ export default function Home() {
         </video>
         </div>
          
-        <h2>Bienvenue</h2>
+        <h2>{welcomeText}</h2>
+
         <p>"Harmonisez vos passions, partagez vos émotions avec Connectify !"</p>
        
         

@@ -4,35 +4,67 @@ import { auth, db, storage } from '../firebase.config';
 import { doc, getDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { storage as firebaseStorage } from '../firebase.config';
 import videoSrc from '../assets/images/videoprofil.mp4';
 import './Profil.css';
-
-
-
-
-
-
 
 
 export default function Profil() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('all');
+  const [newCover, setNewCover] = useState(null);
+
   const [modalImage, setModalImage] = useState(null);
-
-
   const [wallPosts, setWallPosts] = useState([
     {
+      titre: "Le Rap US >>> Rap FR",
+      texte: "",
+      heure: "8:10",
+      fileUrl: null,
+      fileType: null
+    },
+    {
+     
       texte: "J'aime le classique...",
-      image: require('../assets/images/homer.jpeg'),
       heure: "14:20",
-      titre: "Le Rap US >>> Rap FR"
+      fileUrl: require('../assets/images/homer.jpeg'),
+      fileType: "image"
     }
   ]);
+  
+
+  const [gallery, setGallery] = useState([
+    require('../assets/images/pexels-kampus-production-5935232.jpg'),
+    require('../assets/images/pexels-matthias-groeneveld-4200745.jpg'),
+    require('../assets/images/pexels-sound-on-3755913.jpg'),
+    require('../assets/images/Quisommesnousconnectify.png')
+  ]);
+  
+  
+  const [videos, setVideos] = useState([
+      require('../assets/images/videoprofil.mp4'),
+      
+    ]);
+    
+    
+    const [musics, setMusics] = useState([
+      {
+        title: "RioGane - Down",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        cover: require("../assets/images/album-hip-hop.png")
+      },
+      {
+        title: "Grange - WAP",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        cover: require("../assets/images/album-hop.png")
+      }
+    ]);
+    
+
+
+  const [newTitle, setNewTitle] = useState('');
   const [newMessage, setNewMessage] = useState('');
-  const [newImage, setNewImage] = useState(null);
-  const [dynamicGallery, setDynamicGallery] = useState([]);
+  const [newFile, setNewFile] = useState(null);
 
 
   const navigate = useNavigate();
@@ -61,30 +93,80 @@ export default function Profil() {
 
 
   const handlePublish = async () => {
-    let imageUrl = null;
+    if (!newFile && !newMessage) return;
 
 
-    if (newImage) {
-      const imageRef = ref(storage, `images/${newImage.name}`);
-      await uploadBytes(imageRef, newImage);
-      imageUrl = await getDownloadURL(imageRef);
-      setDynamicGallery(prev => [...prev, imageUrl]);
+    let fileUrl = null;
+    let fileType = null;
+
+
+    if (newFile) {
+      const fileRef = ref(storage, `uploads/${Date.now()}_${newFile.name}`);
+      await uploadBytes(fileRef, newFile);
+      fileUrl = await getDownloadURL(fileRef);
+
+
+      if (newFile.type.startsWith("image")) fileType = "image";
+      else if (newFile.type.startsWith("video")) fileType = "video";
+      else if (newFile.type.startsWith("audio")) fileType = "music";
     }
 
 
-    setWallPosts(prev => [
-      ...prev,
-      {
-        texte: newMessage,
-        image: imageUrl,
-        heure: getCurrentTime(),
-        titre: "Nouvelle publication"
+    const newPost = {
+      titre: newTitle || "Nouvelle publication",
+      texte: newMessage,
+      heure: getCurrentTime(),
+      fileUrl,
+      fileType
+    };
+
+
+    setWallPosts(prev => [...prev, newPost]);
+
+
+    if (fileType === "image") {
+      setGallery(prev => [fileUrl, ...prev]);
+    } else if (fileType === "video") {
+      setVideos(prev => [fileUrl, ...prev]);
+    } else if (fileType === "music") {
+      setMusics(prev => [fileUrl, ...prev]);
+    }
+
+
+
+
+
+    if (fileType === "music") {
+      let coverUrl = "https://via.placeholder.com/100x100";
+    
+    
+      if (newCover) {
+        const coverRef = ref(storage, `covers/${Date.now()}_${newCover.name}`);
+        await uploadBytes(coverRef, newCover);
+        coverUrl = await getDownloadURL(coverRef);
       }
-    ]);
+    
+    
+      setMusics(prev => [
+        {
+          title: newTitle || `Musique ${prev.length + 1}`,
+          src: fileUrl,
+          cover: coverUrl
+        },
+        ...prev
+      ]);
+    }
+    
+    
+    
 
 
+
+
+
+    setNewTitle('');
     setNewMessage('');
-    setNewImage(null);
+    setNewFile(null);
   };
 
 
@@ -123,34 +205,52 @@ export default function Profil() {
                   <div className="wall-post" key={index}>
                     <div className="wall-header">
                       <h3>{post.titre}</h3>
-                      <span className="wall-time">{post.heure}</span>
+                   
                     </div>
                     <div className="wall-image-section">
-                    {post.image && <img src={'${post.image}?${Date.now()}'} alt="post" className="wall-image" />}
+                      {post.fileType === "image" && <img src={post.fileUrl} alt="media" className="wall-image" />}
+                      {post.fileType === "video" && <video src={post.fileUrl} controls className="wall-image" />}
+                      {post.fileType === "music" && <audio src={post.fileUrl} controls className="wall-audio" />}
                       <p className="wall-comment">{post.texte}</p>
                       <span className="wall-time">{post.heure}</span>
                     </div>
                   </div>
                 ))}
                 <div className="message-box">
+                
                   <input
                     type="text"
+                    placeholder="Message..."
                     className="comment-input"
-                    placeholder="Écrivez un message..."
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                   />
                   <input
                     type="file"
-                    accept="image/*"
-                    onChange={(e) => setNewImage(e.target.files[0])}
+                    accept="image/*,video/*,audio/*"
+                    onChange={(e) => setNewFile(e.target.files[0])}
+                    style={{ display: 'none' }}
+                    id="file-input"
                   />
-                  <div className="icons">
-                    <button className="btn-send" onClick={handlePublish}></button>
-                  </div>
+                 
+                
+
+
+                  <input
+  type="file"
+  accept="image/*"
+  onChange={(e) => setNewCover(e.target.files[0])}
+  style={{ display: 'none' }}
+  id="cover-input"
+/>
+<label htmlFor="cover-input" className="btn-download" />
+<button className="btn-send" onClick={handlePublish}></button>
+
                 </div>
               </section>
             </>
+
+            
           )}
 
 
@@ -158,19 +258,13 @@ export default function Profil() {
             <>
               <h2 className="section-title">Gallery</h2>
               <div className="gallery">
-                {[
-                  require('../assets/images/pexels-kampus-production-5935232.jpg'),
-                  require('../assets/images/pexels-matthias-groeneveld-4200745.jpg'),
-                  require('../assets/images/pexels-sound-on-3755913.jpg'),
-                  require('../assets/images/Quisommesnousconnectify.png'),
-                  ...dynamicGallery
-                ].map((src, index) => (
+                {gallery.map((src, index) => (
                   <img
                     key={index}
-                    src={typeof src === 'string' ?  '${src}?${Date.now()}' : src.default}
-                    alt={`Image ${index}`}
+                    src={src}
+                    alt={`image-${index}`}
                     className="gallery-img-clickable"
-                    onClick={() => setModalImage(typeof src === 'string' ? src : src.default)}
+                    onClick={() => setModalImage(src)}
                   />
                 ))}
               </div>
@@ -186,38 +280,42 @@ export default function Profil() {
           )}
 
 
-          {(activeSection === 'all' || activeSection === 'video') && (
-            <>
-              <h2 className="section-title">Video</h2>
-              <div className="video-container">
-                <video className="profil-video" controls>
-                  <source src={videoSrc} type="video/mp4" />
-                  Votre navigateur ne prend pas en charge la lecture de vidéos.
-                </video>
-              </div>
-            </>
-          )}
+                   {/* V I D E O */}
+                   {(activeSection === 'all' || activeSection === 'video') && (
+  <>
+    <h2 className="section-title">Video</h2>
+    <div className="video-container">
+      {videos.map((src, i) => (
+        <video key={i} className="profil-video" controls>
+          <source src={typeof src === 'string' ? src : src.default} type="video/mp4" />
+        </video>
+      ))}
+    </div>
+  </>
+)}
 
 
           {(activeSection === 'all' || activeSection === 'music') && (
             <>
               <h2 className="section-title">Music</h2>
               <div className="music-container">
-                <div className="music-item">
-                  <img className="music-covern" src="https://via.placeholder.com/100x100" alt="cover" />
-                  <p className="music-title">RioGane - Down</p>
-                  <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
-                  </audio>
-                </div>
-                <div className="music-item">
-                  <img className="music-cover" src="https://via.placeholder.com/100x100" alt="cover" />
-                  <p className="music-title">Grange - WAP</p>
-                  <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3" />
-                  </audio>
-                </div>
+              {[
+
+  ...musics
+]
+.filter(music => music.src) // NE GARDE QUE les musiques valides
+.map((music, i) => (
+
+                  <div key={i} className="music-item">
+                    <img className="music-cover" src={music.cover || "https://via.placeholder.com/100x100"} alt="cover" />
+                    <p className="music-title">{music.title}</p>
+                    <audio controls>
+                      <source src={music.src} type="audio/mp3" />
+                    </audio>
+                  </div>
+                ))}
               </div>
+  
             </>
           )}
         </main>
